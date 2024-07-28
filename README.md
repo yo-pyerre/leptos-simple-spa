@@ -11,3 +11,8 @@ Steps taken:
    4. Add wasm32 target
       1. `rustup target add wasm32-unknown-unknown`
    5. Create simple `index.html`
+   6. Run server with Trunk
+      1. `trunk serve` runs SPA at https://localhost:8080/
+2. Set up [dev experience improvements](https://book.leptos.dev/getting_started/leptos_dx.html)
+   1. Added `console_error_panic_hook`
+   2. Added `leptosfmt.toml` to override defuault rustfmt on `view` macro
