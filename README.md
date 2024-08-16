@@ -29,3 +29,19 @@ Learning Rust web development stack
     - `let (count, set_count) = create_signal(0)`
 - [`view!` macro](https://docs.rs/leptos/latest/leptos/macro.view.html)
     - JSX-like format
+
+## Bugs I've Run Into
+
+### <u>7/28/2024</u>
+
+- Blue Screen of Death after some hot-reloading
+  - After running `trunk serve -v` and hot-reloading >1 times, Windows crashed
+    - Dump logs saved to `../Windows/MEMORY.DMP`
+    - Logs viewable w WinDbg
+  - My gut feeling is that this is due to Rust being split between C drive and WSL file systems
+    - Rustup toolchain was on WSL but project files on C
+  - Logged error message shows problem caused by `IMAGE_NAME:  LXCORE.SYS`
+
+- failed to create directory when calling `trunk serve`
+  - OS permission error
+  - 
