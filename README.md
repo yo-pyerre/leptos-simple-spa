@@ -4,7 +4,8 @@ This is a Cargo *workspace* where I will manage multiple packages comprising a P
 
 /frontend
 
-- build using Leptos framework
+- Written in Leptos framework
+- Compiled with `trunk serve`
 
 /lambdas
 

@@ -30,7 +30,16 @@ Learning Rust web development stack
 - [`view!` macro](https://docs.rs/leptos/latest/leptos/macro.view.html)
     - JSX-like format
 
-## Bugs I've Run Into
+## Bugs / Issues I've Run Into
+
+### <u>12/25/2024</u>
+
+- Dependencies conflicting with build target platform
+    - `trunk serve` was failing to compile transitive dependencies along path `aws-config -> tokio -> mio`
+        - I meant to put `aws-config` in my `/lambdas` sub-workspace but accidentally included it
+          in `/frontend/Cargo.toml`
+    - `trunk serve` targets `wasm-unknown-unknown`
+    - The version of mio used in `/lambdas` was not compatible with `wasm` targets
 
 ### <u>7/28/2024</u>
 
